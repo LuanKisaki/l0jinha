@@ -19,4 +19,8 @@
 body {
   color: rgb(var(--foreground-rgb));
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
 }
