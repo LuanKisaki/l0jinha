@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Products from "./products";
 import { Roboto } from "next/font/google";
+import Header from "@/components/Header";
 
 const titulo = Roboto({
   weight: '700',
@@ -15,13 +16,14 @@ const Home: NextPage = () => {
       <title>L0jinha</title>
       <meta name="description"/>
     </Head>
+
+    <Header />
     <main>
       <h1 className={titulo.className}>Welcome to <a className="text-blue" href="https://nextjs.org">Next.js</a></h1>
 
       <p>
         Lorem ipsum dolor sit amet consectetur.
       </p>
-      <Products></Products>
       </main>
     </>
   )
