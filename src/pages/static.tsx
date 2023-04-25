@@ -1,5 +1,4 @@
-import { GetServerSideProps, NextPage } from "next";
-import React from "react";
+import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import { ReactNode, useEffect, useState } from "react";
 import { Container } from "reactstrap";
 
@@ -8,18 +7,19 @@ interface ApiResponse {
   timestamp: Date
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const serverSideData: ApiResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/hello`).then(res => res.json())
+export const getStaticProps: GetStaticProps = async () => {
+  const staticData = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/hello`).then(res => res.json())
+
   return {
     props: {
-      serverSideData
+      staticData
     }
   }
 }
 
-const Dynamic: NextPage = ( props: {
+const Static: NextPage = (props: {
   children?: ReactNode
-  serverSideData?: ApiResponse
+  staticData?: ApiResponse
 }) => {
   const [clientSideData, setClientSideData] = useState<ApiResponse>()
 
@@ -37,13 +37,13 @@ const Dynamic: NextPage = ( props: {
       <h1 className="my-5 text-center">
         renderização do Next.js
       </h1>
-      <div className="flex gap-10">
+      <div className="flex justify-center gap-10">
         <div className="col-auto">
           <h3>
-            Gerado no servidor:
+            Gerado estáticamente durante  o build:
           </h3>
           <h2>
-            {props.serverSideData?.timestamp?.toString()}
+            { props.staticData?.timestamp?.toString() }
           </h2>
         </div>
         <div className="col-auto">
@@ -51,7 +51,7 @@ const Dynamic: NextPage = ( props: {
             Gerado no cliente:
           </h3>
           <h2>
-            {clientSideData?.timestamp?.toString()}
+            { clientSideData?.timestamp?.toString() }
           </h2>
         </div>
       </div>
@@ -59,4 +59,4 @@ const Dynamic: NextPage = ( props: {
   )
 }
 
-export default Dynamic
+export default Static
