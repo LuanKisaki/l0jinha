@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import Cart from "./cart";
-import Header from "@/components/Header";
+import Header from "@/components/header";
 
 const Products: NextPage = () => {
   return (
