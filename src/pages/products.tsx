@@ -1,20 +1,36 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Cart from "./cart";
 import Header from "@/components/header";
+import ProductList from "@/components/productList";
+import { ProductType, fetchProducts } from "@/components/services/products";
+import { ReactNode } from "react";
 
-const Products: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const products = await fetchProducts()
+
+  return { props: { products } }
+}
+const Products: NextPage = (props: {
+  children?: ReactNode
+  products?: ProductType[]
+}) => {
   return (
     <>
-    <Head>
-      <title>Nossos Produtos</title>
-      <meta name="description" content="Conheça nossos produtos"/>
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    </Head>
-    <Header />
-    <h2 className="">
-      Produtos
-    </h2>
+      <Head>
+        <title>Nossos Produtos</title>
+        <meta name="description" content="Conheça nossos produtos" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      </Head>
+      <Header />
+      <main>
+        <div className="mb-5">
+          <h2 className="">
+            Produtos
+          </h2>
+
+          {<ProductList products={props.products!} />}
+        </div>
+      </main>
 
     </>
   )
