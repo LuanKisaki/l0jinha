@@ -4,7 +4,7 @@ const SuccessToast = (props: {
 }) => {
   return (
     <div
-    className="toast toast-top toast-end bg-blue text-white fixed-bottom ms-auto me-4 mb-4"
+    className="toast"
     // isOpen={props.toastIsOpen}
     >
       <div className="alert alert-success d-flex justify-between">

@@ -48,3 +48,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+
+.scaleforce:hover {
+  scale: 1.1
+}

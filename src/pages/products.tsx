@@ -24,10 +24,10 @@ const Products: NextPage = (props: {
       </Head>
       <Header />
       <main>
-        <div className="mb-5">
-          <h2 className="">
-            Produtos
+          <h2 className="m-4">
+            Nossos Produtos
           </h2>
+        <div className="flex flex-row flex-wrap mb-4 ">
 
           {<ProductsList products={props.products!} />}
         </div>

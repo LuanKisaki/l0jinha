@@ -36,5 +36,11 @@ module.exports = {
       }
     }
   },
+  variants: {
+    extend: {
+      // ...
+     transform: ['hover']
+    }
+  },
   plugins: [require("daisyui")],
 }
