@@ -1,15 +1,16 @@
-import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Header from "@/components/header";
-import ProductList from "@/components/productList";
-import { ProductType, fetchProducts } from "@/components/services/products";
 import { ReactNode } from "react";
+import Header from "@/components/header";
+import { GetStaticProps, NextPage } from "next";
+import ProductsList from "@/components/productList";
+import { ProductType, fetchProducts } from "@/components/services/products";
 
 export const getStaticProps: GetStaticProps = async () => {
   const products = await fetchProducts()
 
   return { props: { products } }
 }
+
 const Products: NextPage = (props: {
   children?: ReactNode
   products?: ProductType[]
@@ -28,10 +29,9 @@ const Products: NextPage = (props: {
             Produtos
           </h2>
 
-          {<ProductList products={props.products!} />}
+          {<ProductsList products={props.products!} />}
         </div>
       </main>
-
     </>
   )
 }

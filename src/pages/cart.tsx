@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { NextPage } from "next";
 import Head from "next/head";
@@ -14,7 +15,7 @@ const Cart: NextPage = () => {
     <h3>
       Carrinho
     </h3>
-
+    <Footer/>
     </>
   )
 }

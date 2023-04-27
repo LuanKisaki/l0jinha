@@ -32,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             className="text-gray-dark pb-2"
             onClick={() => {
               setToastIsOpen(true)
-              // setTimeout(() => setToastIsOpen(false), 1000 * 3)
+              setTimeout(() => setToastIsOpen(false), 1000 * 3)
             }}
             >
             Adicionar ao carrinho

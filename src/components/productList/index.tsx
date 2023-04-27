@@ -1,3 +1,4 @@
+import React from "react"
 import ProductCard from "../productCard"
 import { ProductType } from "../services/products"
 
@@ -5,7 +6,7 @@ type ProductListProps = {
   products: ProductType[]
 }
 
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
+const ProductsList: React.FC<ProductListProps> = ({ products }) => {
 
   return (
     <>
@@ -22,4 +23,4 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
   )
 }
 
-export default ProductList
+export default ProductsList

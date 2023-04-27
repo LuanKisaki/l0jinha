@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -15,6 +16,28 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+
+    background: rgba(25, 38, 54, .9);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(19, 206, 102);
+    border-radius: 100vh;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 186, 83);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
