@@ -33,14 +33,20 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
-    }
+      },
+      animation: {
+        rotate: 'rotate 1s infinite'
+      },
+      keyframes: {
+        rotate: {
+          'from': { filter: 'hue-rotate(0deg)' },
+          'to': { filter: 'hue-rotate(360deg)' },
+        }
+      },
+    },
   },
   variants: {
-    extend: {
-      // ...
-     transform: ['hover']
-    }
-  },
+    transform: [ 'hover' ],
+    },
   plugins: [require("daisyui")],
 }
