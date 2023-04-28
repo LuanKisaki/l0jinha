@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import products from "../../../../data/database.json";
+import products from "../../../data/database.json";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query
