@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <main className="flex flex-col items-center gap-4 pt-8 h-[75vh]">
+      <main className="flex flex-col items-center gap-4 pt-8">
         <h1 className='text-7xl bg-green p-6 select-none'>
           Seja bem vindo a <a className="text-white no-underline " href="https://nextjs.org">L0jinha</a>!
         </h1>
