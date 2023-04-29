@@ -70,7 +70,3 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 }
 
 export default ProductCard
-
-function saveSettings(settings: any): Promise<unknown> {
-  throw new Error("Function not implemented.")
-}
