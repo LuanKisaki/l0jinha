@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ProductType } from "../../services/products"
+import { ProductType } from "../services/products"
 import Image from "next/image"
 import SuccessToast from "../successToast"
 import toast from "react-hot-toast"
@@ -24,7 +24,7 @@ const productDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     </div>
     <div>
       <h1>{product.name}</h1>
-      <h2 className="">R$ {product.price}</h2>
+      <h2 >R$ {product.price}</h2>
 
       <p>
         <label>
