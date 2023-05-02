@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import { GetStaticProps, NextPage } from "next";
 import ProductsList from "@/components/productList";
 import { ProductType, fetchProducts } from "@/components/services/products";
+import Footer from "@/components/footer";
 
 export const getStaticProps: GetStaticProps = async () => {
   const products = await fetchProducts()
@@ -32,6 +33,7 @@ const Products: NextPage = (props: {
           {<ProductsList products={props.products!} />}
         </div>
       </main>
+      <Footer />
     </>
   )
 }
