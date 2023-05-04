@@ -57,7 +57,7 @@ const Product: NextPage = (props: {
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <Header />
-      <div className="flex m-4">
+      <div className="flex m-4 items-center">
         <ProductDetails product={props.product!} />
       </div>
       <Footer />

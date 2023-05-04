@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import SuccessToast from "../successToast"
 import toast from "react-hot-toast"
+import { useCart } from "@/hooks/useCart"
 type ProductCardProps = {
   product: ProductType
 }
@@ -12,6 +13,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [toastIsOpen, setToastIsOpen] = useState(false)
   const { id, name, imageUrl, price, inStock } = product
   const notifyToast = () => toast.success('Adicionado ao carrinho')
+  const {addProduct} = useCart()
+  const add = () => {addProduct(product)}
   // const notifyToast = () => toast.promise(
   //   saveSettings(settings),
   //   {
@@ -24,7 +27,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <>
       <div className="card flex flex-col shadow-xl bg-white scaleforce transition-all duration-200">
         <figure>
-
           <Link href={`/products/${id}`}>
             <Image className="card-img-top hover:animate-rotate" src={imageUrl} alt={product.name} height={200} width={300} />
           </Link>
@@ -38,8 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <div
             className="flex mb-3 text-muted font-bold text-gray-dark justify-between">
             <span>
-              R$ {price.toFixed(2).replace('.',',')}
-
+              R$ {price.toFixed(2).replace('.', ',')}
             </span>
             <span>
               Qtd: {inStock}
@@ -49,19 +50,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <button
               className="p-4 rounded-lg uppercase text-white font-bold border-none bg-gray-dark cursor-pointer
               hover:bg-green transition-all transition-color duration-200 delay-200"
-              onClick={notifyToast}
-            //     () => {
-            //     setToastIsOpen(true)
-            //     setTimeout(() => setToastIsOpen(false), 1000 * 3)
-            //   }
-            // }
+              onClick={() => {
+                notifyToast();
+                add();
+              }}
             >
               Buy now
             </button>
           </div>
         </div>
       </div>
-      <SuccessToast 
+      <SuccessToast
         toastIsOpen={toastIsOpen}
         setToastIsOpen={setToastIsOpen}
       />

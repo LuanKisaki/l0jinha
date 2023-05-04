@@ -3,7 +3,7 @@ import { ProductType } from "../services/products"
 import Image from "next/image"
 import SuccessToast from "../successToast"
 import toast from "react-hot-toast"
-import Footer from "../footer"
+import { useCart } from "@/hooks/useCart"
 
 type ProductDetailsProps = {
   product: ProductType
@@ -13,6 +13,7 @@ const notifyToast = () => toast.success('Adicionado ao carrinho')
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const [toastIsOpen, setToastIsOpen] = useState(false)
+  const { addProduct} = useCart()
 
   return (
     <>
@@ -31,7 +32,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         </div>
         <div className="flex flex-col gap-2 items-start">
           <p className="font-bold">Descrição: </p>
-          <p className="text-justify">
+          <p className="text-justify mr-12">
             {product.description}
           </p>
           <p>
@@ -41,7 +42,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
           <button
             className="bg-green border-none uppercase hover:bg-blue  text-white font-bold my-3 p-4 rounded-md"
-            onClick={notifyToast}
+            onClick={() => {
+              addProduct(product)
+              notifyToast
+            }
+            }
           >
             Comprar
           </button>
