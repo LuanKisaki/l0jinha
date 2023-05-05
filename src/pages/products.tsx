@@ -1,10 +1,10 @@
 import Head from "next/head";
 import { ReactNode } from "react";
-import Header from "@/components/header";
+import Header from "../../../src/components/header";
 import { GetStaticProps, NextPage } from "next";
-import ProductsList from "@/components/productList";
-import { ProductType, fetchProducts } from "@/components/services/products";
-import Footer from "@/components/footer";
+import ProductsList from "../../../src/components/productList";
+import { ProductType, fetchProducts } from "../../../src/components/services/products";
+import Footer from "../../../src/components/footer";
 
 export const getStaticProps: GetStaticProps = async () => {
   const products = await fetchProducts()

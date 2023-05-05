@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import SuccessToast from "../successToast"
 import toast from "react-hot-toast"
-import { useCart } from "@/hooks/useCart"
+import { useCart } from "../../../src/hooks/useCart"
 type ProductCardProps = {
   product: ProductType
 }

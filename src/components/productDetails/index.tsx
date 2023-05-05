@@ -3,7 +3,7 @@ import { ProductType } from "../services/products"
 import Image from "next/image"
 import SuccessToast from "../successToast"
 import toast from "react-hot-toast"
-import { useCart } from "@/hooks/useCart"
+import { useCart } from "../../../src/hooks/useCart"
 import ProductCard from "../productCart"
 
 type ProductDetailsProps = {
