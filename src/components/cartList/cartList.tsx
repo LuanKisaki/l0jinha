@@ -84,7 +84,7 @@ export default function CartList() {
 
   useEffect(() => {
     const entriesList = cart.reduce((list, product) => {
-      const entryIndex = list.findIndex(entry => entry.product.id === product.id)
+      const entryIndex = list.findIndex((entry: { product: { id: any } }) => entry.product.id === product.id)
 
       if (entryIndex === -1) {
         return [
@@ -100,7 +100,7 @@ export default function CartList() {
 
     }, [] as CartEntry[])
 
-    entriesList.sort((a, b) => a.product.id - b.product.id)
+    entriesList.sort((a: { product: { id: any } }, b: { product: { id: any } }) => a.product.id - b.product.id)
     setCartEntries(entriesList)
   }, [cart])
   return (

@@ -1,6 +1,6 @@
-import CartList from "../../../src/components/cartList/cartList";
-import Footer from "../../../src/components/footer";
-import Header from "../../../src/components/header";
+import CartList from "../../src/components/cartList/cartList";
+import Footer from "../../src/components/footer";
+import Header from "../../src/components/header";
 import { NextPage } from "next";
 import Head from "next/head";
 
