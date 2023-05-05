@@ -14,7 +14,7 @@ type ProductDetailsProps = {
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const [toastIsOpen, setToastIsOpen] = useState(false)
-  const notifyToast = () => toast.success('Adicionado ao carrinho')
+  const notifyToast = () => toast.success('Adicionado ao carrinho', {position: 'top-center'})
   const { addProduct} = useCart()
   const add = () => {addProduct(product)}
 

@@ -12,7 +12,7 @@ type ProductCardProps = {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [toastIsOpen, setToastIsOpen] = useState(false)
   const { id, name, imageUrl, price, inStock } = product
-  const notifyToast = () => toast.success('Adicionado ao carrinho')
+  const notifyToast = () => toast.success('Adicionado ao carrinho', {position: 'top-center'})
   const {addProduct} = useCart()
   const add = () => {addProduct(product)}
   // const notifyToast = () => toast.promise(

@@ -2,6 +2,7 @@ import { useCart } from "@/hooks/useCart"
 import { ProductType } from "../services/products"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import CartTotal from "../cartTotal"
 
 type CartEntry = {
   product: ProductType
@@ -108,18 +109,21 @@ export default function CartList() {
   return (
     <div className="flex flex-col items-start mx-4 justify-between ">
       <div className="md:w-2/3 w-full">
-        <thead className="bg-gray-light content-center px-2 py-1 rounded-md table-cell">
-          <tr className="grid grid-cols-5 col-span-1 gap-4 text-center font-bold">
-            <td className="w-30">Produto</td>
-            <td className="w-12">Qtd.</td>
-            <td>Preço</td>
-            <td>Total</td>
-            <td>Opções</td>
-          </tr>
-        </thead>
-        <tbody className="">
-          {cartEntries.map(entry => <CartListRow key={entry.product.id} entry={entry} />)}
-        </tbody>
+        <table>
+          <thead className="bg-gray-light content-center px-2 py-1 rounded-md table-cell">
+            <tr className="grid grid-cols-5 col-span-1 gap-4 text-center font-bold">
+              <td className="w-30">Produto</td>
+              <td className="w-12">Qtd.</td>
+              <td>Preço</td>
+              <td>Total</td>
+              <td>Opções</td>
+            </tr>
+          </thead>
+          <tbody className="">
+            {cartEntries.map(entry => <CartListRow key={entry.product.id} entry={entry} />)}
+            <CartTotal />
+          </tbody>
+        </table>
       </div>
     </div>
   )

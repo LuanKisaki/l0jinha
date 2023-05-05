@@ -1,4 +1,5 @@
 import CartList from "@/components/cartList/cartList";
+import CartTotal from "@/components/cartTotal";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { NextPage } from "next";
@@ -19,6 +20,7 @@ const Cart: NextPage = () => {
             Meu Carrinho
           </h2>
           <CartList />
+          
         </div>
       </main>
       <Footer/>
