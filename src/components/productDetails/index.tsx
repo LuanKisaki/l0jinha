@@ -4,16 +4,19 @@ import Image from "next/image"
 import SuccessToast from "../successToast"
 import toast from "react-hot-toast"
 import { useCart } from "@/hooks/useCart"
+import ProductCard from "../productCart"
 
 type ProductDetailsProps = {
   product: ProductType
 }
 
-const notifyToast = () => toast.success('Adicionado ao carrinho')
+
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const [toastIsOpen, setToastIsOpen] = useState(false)
+  const notifyToast = () => toast.success('Adicionado ao carrinho')
   const { addProduct} = useCart()
+  const add = () => {addProduct(product)}
 
   return (
     <>
@@ -43,10 +46,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           <button
             className="bg-green border-none uppercase hover:bg-blue  text-white font-bold my-3 p-4 rounded-md"
             onClick={() => {
-              addProduct(product)
-              notifyToast
-            }
-            }
+              notifyToast();
+              add();
+            }}
           >
             Comprar
           </button>

@@ -13,15 +13,15 @@ const Cart: NextPage = () => {
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <Header />
-      <main>
-        <div>{ /* container */ }
-          <h3>
-            Carrinho
-          </h3>
+      <main className="min-h-[60vh]">
+        <div>
+          <h2 className="m-4">
+            Meu Carrinho
+          </h2>
           <CartList />
         </div>
       </main>
-      <Footer />
+      <Footer/>
     </>
   )
 }

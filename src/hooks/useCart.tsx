@@ -17,7 +17,7 @@ export const CartContextProvider = (props: {
 
 
   useEffect(() => {
-    const storedCart = localStorage.getItem('shopping-cart')
+    const storedCart = localStorage.getItem('ACME-cart')
 
     if(storedCart) {
       setCart(JSON.parse(storedCart))
@@ -34,9 +34,9 @@ export const CartContextProvider = (props: {
     const productIndex = cart.findIndex(product => product.id === productId)
 
     if (productIndex !== -1) {
-
       const updatedCart = [...cart]
-      localStorage.setItem('shopping-cart', JSON.stringify(updatedCart))
+      updatedCart.splice(productIndex, 1)
+      localStorage.setItem('ACME-cart', JSON.stringify(updatedCart))
       setCart(updatedCart)
     }
   }

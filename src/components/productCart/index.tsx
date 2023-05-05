@@ -46,7 +46,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               Qtd: {inStock}
             </span>
           </div>
-          <div className="card-actions justify-end">
+          <div className="card-actions justify-end ">
             <button
               className="p-4 rounded-lg uppercase text-white font-bold border-none bg-gray-dark cursor-pointer
               hover:bg-green transition-all transition-color duration-200 delay-200"

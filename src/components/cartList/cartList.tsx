@@ -15,35 +15,50 @@ const CartListRow = (props: {
 
   return (
     <>
-      <tr>
-        <td>
-          <div className="items-center">{/* Row */}
-            <div className="">{/* Col */}
-              <Image
-                src={props.entry.product.imageUrl}
-                alt={props.entry.product.name}
-                height={500}
-                width={600}
-              />
-            </div>
-            <div className="">{/* Col */}
+      <tr className="grid grid-cols-5 gap-4 font-bold items-center justify-between">
+        <td >
+          <div className="flex flex-row items-center ">
+            <Image
+              src={props.entry.product.imageUrl}
+              alt={props.entry.product.name}
+              height={50}
+              width={65}
+            />
+            <label className="min-w-20">
               {props.entry.product.name}
-            </div>
+            </label>
           </div>
         </td>
-        <td>
-          R$ {props.entry.product.price}
+        <td className="text-end w-12">
+
+          <input type="text" className="text-end w-8"
+            disabled
+            value={props.entry.quantity}
+          />
         </td>
-        <td>
-          {props.entry.quantity}
+        <td >
+          <div className="flex gap-2 justify-center">
+            <label >R$ </label>
+            <input type="text" className="text-end w-16"
+              disabled
+              value={props.entry.product.price.toFixed(2).replace('.', ',')}
+            />
+          </div>
         </td>
-        <td>
-          R$ {(props.entry.product.price * props.entry.quantity)}
+        <td className="text-end">
+          <div className="flex gap-2  justify-center">
+            <label >R$ </label>
+            <input type="text" className="text-end w-20"
+              disabled
+              value={(props.entry.product.price * props.entry.quantity).toFixed(2).replace('.', ',')}
+            />
+          </div>
         </td>
-        <td>
-          <div>
+        <td className="justify-self-center">
+          <div className="flex flex-col w-12 md:w-24 gap-1 px-2 py-1">
             <button
-              className="bg-green"
+              className="bg-green border-none px-2 py-1 rounded-md hover:bg-[#0d6c2c]
+              active:bg-green transition-color duration-200 text-white font-extrabold text-lg"
               onClick={
                 () => addProduct(props.entry.product)
               }
@@ -51,7 +66,7 @@ const CartListRow = (props: {
               +
             </button>
             <button
-              className="bg-orange"
+              className="bg-orange border-none px-2 py-1 rounded-md hover:bg-[#75310c] active:bg-orange transition-color duration-200 text-white font-extrabold text-lg"
               onClick={
                 () => removeProduct(props.entry.product.id)
               }
@@ -91,17 +106,20 @@ export default function CartList() {
     setCartEntries(entriesList)
   }, [cart])
   return (
-    <div className="">{/* table */}
-      <div> {/* thead */}
-        <div>{/* tr */}
-          <div>Produto</div>{/* th */}
-          <div>Preço</div>
-          <div>Qtd.</div>
-          <div>Total</div>
-        </div>
-      </div>
-      <div>{/* tbody */}
-      {cartEntries.map(entry => <CartListRow key={entry.product.id} entry={entry} />)}
+    <div className="flex flex-col items-start mx-4 justify-between ">
+      <div className="md:w-2/3 w-full">
+        <thead className="bg-gray-light content-center px-2 py-1 rounded-md table-cell">
+          <tr className="grid grid-cols-5 col-span-1 gap-4 text-center font-bold">
+            <td className="w-30">Produto</td>
+            <td className="w-12">Qtd.</td>
+            <td>Preço</td>
+            <td>Total</td>
+            <td>Opções</td>
+          </tr>
+        </thead>
+        <tbody className="">
+          {cartEntries.map(entry => <CartListRow key={entry.product.id} entry={entry} />)}
+        </tbody>
       </div>
     </div>
   )
