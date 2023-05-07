@@ -1,6 +1,5 @@
 import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import { ReactNode, useEffect, useState } from "react";
-import { Container } from "reactstrap";
 
 interface ApiResponse {
   name: string
@@ -33,7 +32,7 @@ const Static: NextPage = (props: {
   }
 
   return (
-    <Container tag="main">
+    <div className="main">
       <h1 className="my-5 text-center">
         renderização do Next.js
       </h1>
@@ -55,7 +54,7 @@ const Static: NextPage = (props: {
           </h2>
         </div>
       </div>
-    </Container>
+    </div>
   )
 }
 
