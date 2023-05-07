@@ -9,9 +9,7 @@ type CartEntry = {
   quantity: number
 }
 
-const CartListRow = (props: {
-  entry: CartEntry
-}) => {
+const CartListRow = (props: {entry: CartEntry }) => {
   const { addProduct, removeProduct } = useCart()
 
   return (
