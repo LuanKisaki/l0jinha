@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     redirect: {
-      destination: '/products',
+      destination: './products',
       permanent: false
     }
   }
