@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { ReactNode } from "react";
-import Header from "@/components/Header";
+import Header from "@/components/header";
 import { GetStaticProps, NextPage } from "next";
 import ProductsList from "@/components/productList";
 import { ProductType, fetchProducts } from "@/components/services/products";

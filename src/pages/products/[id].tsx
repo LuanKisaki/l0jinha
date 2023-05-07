@@ -1,5 +1,5 @@
 import Footer from "@/components/footer"
-import Header from "@/components/Header"
+import Header from "@/components/header"
 import ProductDetails from "@/components/productDetails"
 import { ProductType, fetchProduct, fetchProducts } from "@/components/services/products"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
