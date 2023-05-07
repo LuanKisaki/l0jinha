@@ -34,7 +34,7 @@ const Dynamic: NextPage = ( props: {
   return (
     <div className="main">
       <h1 className="my-5 text-center">
-        renderização do Next.js
+        renderização do Next.js (Dynamic)
       </h1>
       <div className="flex justify-center gap-10">
         <div className="col-auto">
