@@ -1,6 +1,6 @@
 import React from "react"
 import ProductCard from "../productCart"
-import { ProductType } from "../services/products"
+import { ProductType } from "../../services/products"
 
 type ProductListProps = {
   products: ProductType[]

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ProductType } from "../services/products"
+import { ProductType } from "../../services/products"
 import Image from "next/image"
 import SuccessToast from "../successToast"
 import toast from "react-hot-toast"

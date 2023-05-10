@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next"
-import { fetchProduct } from "../services/products"
+import { fetchProduct } from "../../services/products"
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params?.id
