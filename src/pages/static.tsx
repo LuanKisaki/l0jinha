@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticProps, NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { ReactNode, useEffect, useState } from "react";
 
 interface ApiResponse {
