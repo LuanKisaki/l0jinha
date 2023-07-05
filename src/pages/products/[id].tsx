@@ -6,7 +6,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next"
 import Head from "next/head"
 import { ReactNode } from "react"
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async context => {
   const id = context.params?.id
 
   if (typeof id === 'string') {
@@ -39,10 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
   })
 
-  return {
-    paths,
-    fallback: false
-  }
+  return { paths, fallback: false }
 }
 
 const Product: NextPage = (props: {
