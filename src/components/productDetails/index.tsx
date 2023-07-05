@@ -19,39 +19,45 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
   return (
     <>
-      <div>
+      <div className="flex flex-col md:flex-row max-w-screen items-center">
         <Image
           src={product.imageUrl}
           alt={product.name}
-          height={450}
-          width={550}
+          height={200}
+          width={250}
         />
-      </div>
       <div className="flex flex-col items-start gap-4">
-        <div>
+        <div className="flex flex-col gap-1">
           <h1>{product.name}</h1>
           <h2 className="text-gray-dark">R$ {product.price.toFixed(2).replace('.',',')}</h2>
-        </div>
-        <div className="flex flex-col gap-2 items-start">
-          <p className="font-bold">Descrição: </p>
-          <p className="text-justify mr-12">
-            {product.description}
-          </p>
           <p>
-            <label className="font-bold">Em estoque: </label>
+            <span className="font-bold">
+              Em estoque:
+            </span>
+            &nbsp;
             {product.inStock}
           </p>
-
-          <button
-            className="bg-green border-none uppercase hover:bg-blue  text-white font-bold my-3 p-4 rounded-md"
-            onClick={() => {
-              notifyToast();
-              add();
-            }}
-          >
-            Comprar
-          </button>
         </div>
+        <div className="flex flex-col gap-2 items-start">
+          <p className="font-bold">Descrição:
+            <span className="text-justify font-normal md:mr-12">
+            &nbsp;
+              {product.description}
+            </span>
+          </p>
+          <div className="flex flex-row items-center self-center md:self-start">
+            <button
+              className="bg-green border-none uppercase hover:bg-blue  text-white font-bold my-3 p-4 rounded-md"
+              onClick={() => {
+                notifyToast();
+                add();
+              }}
+              >
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
         <SuccessToast
           toastIsOpen={toastIsOpen}
           setToastIsOpen={setToastIsOpen}
