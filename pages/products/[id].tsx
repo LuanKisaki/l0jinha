@@ -52,7 +52,7 @@ const Product: NextPage = (props: {
         <meta name="description" content={props.product!.description}/>
       </Head>
       <Header />
-      <div className="flex m-4 items-center h-screen">
+      <div className="flex my-8 items-center h-screen">
         <ProductDetails product={props.product!} />
       </div>
       <Footer />

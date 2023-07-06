@@ -18,9 +18,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const add = () => {addProduct(product)}
 
   return (
-      <div className="flex flex-col md:flex-row max-w-screen items-center gap-4
+      <div className="flex flex-col lg:flex-row max-w-screen h-screen items-center gap-4
       ">
-        <div className="relative md:w-1/3 w-screen h-96">
+        <div className="relative lg:w-1/3 w-screen h-96">
           <Image
             className="object-contain"
             src={product.imageUrl}
@@ -30,8 +30,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             priority={true}
             />
         </div>
-      <div className="flex flex-col items-start gap-4 md:w-2/3 w-screen">
-        <div className="flex flex-col gap-1">
+      <div className="flex flex-col items-start gap-8 w-4/5 lg:w-1/2 ">
+        <div className="flex flex-col gap-3">
           <h1>{product.name}</h1>
           <h2 className="text-gray-dark">R$ {product.price.toFixed(2).replace('.',',')}</h2>
           <p>
@@ -44,8 +44,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         </div>
         <div className="flex flex-col gap-2 items-start">
           <p className="font-bold">Descrição:
-            <span className="text-justify font-normal md:mr-12">
             &nbsp;
+            <span className="text-justify font-normal md:mx-12">
               {product.description}
             </span>
           </p>

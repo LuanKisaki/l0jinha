@@ -27,8 +27,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <>
       <div
-        className="card flex flex-col shadow-xl bg-white scaleforce transition-all duration-200">
-          <Link href={`/products/${id}`}>
+        className="card shadow-xl bg-white scaleforce transition-all duration-200">
+          <Link className="no-underline" href={`/products/${id}`}>
             <Image 
               className="card-img-top hover:animate-rotate max-h-200"
               src={imageUrl}
@@ -37,13 +37,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               width={300}
               priority={true}
             />
-          </Link>
+          <p
+            className="car-title text-lg font-bold text-green pl-8"
+            >{product.name}
+          </p>
+              </Link>
         <div className="card-body">
-          <Link
-            className="car-title text-lg font-bold no-underline text-green"
-            href={`/products/${id}`}>
-            {name}
-          </Link>
           <div
             className="flex mb-3 text-muted font-bold text-gray-dark justify-between">
             <span>
