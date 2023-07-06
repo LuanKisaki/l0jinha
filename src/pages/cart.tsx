@@ -1,5 +1,5 @@
-import CartList from "@/components/cartList/cartList";
-import Footer from "@/components/footer";
+import CartList from "../components/cartList/cartList";
+import Footer from "../components/footer";
 import Header from "../components/header";
 import { NextPage } from "next";
 import Head from "next/head";

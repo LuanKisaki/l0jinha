@@ -1,6 +1,6 @@
 
 
-import { CartContextProvider } from '@/hooks/useCart'
+import { CartContextProvider } from '../hooks/useCart'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 

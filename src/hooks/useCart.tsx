@@ -1,4 +1,4 @@
-import { ProductType } from "@/services/products"
+import { ProductType } from "../services/products"
 import { ReactNode, createContext, useContext, useEffect, useState } from "react"
 
 type CartContextType = {

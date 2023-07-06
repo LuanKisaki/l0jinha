@@ -1,10 +1,10 @@
 import Head from "next/head"
 import { ReactNode } from "react"
-import Footer from "@/components/footer"
-import Header from "@/components/header"
-import ProductDetails from "@/components/productDetails"
+import Footer from "../../components/footer"
+import Header from "../../components/header"
+import ProductDetails from "../../components/productDetails"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
-import { ProductType, fetchProduct, fetchProducts } from "@/services/products"
+import { ProductType, fetchProduct, fetchProducts } from "../../services/products"
 
 export const getStaticProps: GetStaticProps = async context => {
   const id = context.params?.id
