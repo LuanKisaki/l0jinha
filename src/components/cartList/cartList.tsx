@@ -1,5 +1,5 @@
 import { useCart } from "@/hooks/useCart"
-import { ProductType } from "../../services/products"
+import { ProductType } from "@/services/products"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import CartTotal from "../cartTotal"
