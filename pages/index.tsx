@@ -12,11 +12,10 @@ const Home: NextPage = () => {
       <Head>
         <title>L0jinha</title>
         <meta name="description" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
-
       <main className="flex flex-col items-center gap-4 pt-8 min-h-[58vh]">
         <h1 className='text-4xl md:text-7xl bg-green p-6 select-none text-center'>
           Seja bem vindo a <a className="text-white no-underline " href="https://nextjs.org">L0jinha</a>!

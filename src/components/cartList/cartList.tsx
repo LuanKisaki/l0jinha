@@ -22,6 +22,7 @@ const CartListRow = (props: { entry: CartEntry }) => {
               id={"image_"+props.entry.product.id}
               height={50}
               width={65}
+              priority={true}
             />
           <p className="truncate">
               {props.entry.product.name}

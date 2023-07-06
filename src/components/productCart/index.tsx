@@ -35,6 +35,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               alt={product.name}
               height={200}
               width={300}
+              priority={true}
             />
           </Link>
         <div className="card-body">

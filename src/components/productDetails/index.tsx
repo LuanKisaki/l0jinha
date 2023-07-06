@@ -27,7 +27,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             alt={product.name}
             fill= {true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority
+            priority={true}
             />
         </div>
       <div className="flex flex-col items-start gap-4 md:w-2/3 w-screen">

@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['store.storeimages.cdn-apple.com'],
   },
+  productionBrowserSourceMaps: true,
 }
 
 module.exports = nextConfig
