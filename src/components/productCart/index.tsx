@@ -23,14 +23,20 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   //     error: <b>Erro, tente novamente..</b>,
   //   }
   // );
+
   return (
     <>
-      <div className="card flex flex-col shadow-xl bg-white scaleforce transition-all duration-200">
-        <figure>
+      <div
+        className="card flex flex-col shadow-xl bg-white scaleforce transition-all duration-200">
           <Link href={`/products/${id}`}>
-            <Image className="card-img-top hover:animate-rotate" src={imageUrl} alt={product.name} height={200} width={300} />
+            <Image 
+              className="card-img-top hover:animate-rotate max-h-200"
+              src={imageUrl}
+              alt={product.name}
+              height={200}
+              width={300}
+            />
           </Link>
-        </figure>
         <div className="card-body">
           <Link
             className="car-title text-lg font-bold no-underline text-green"
@@ -51,8 +57,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               className="p-4 rounded-lg uppercase text-white font-bold border-none bg-gray-dark cursor-pointer
               hover:bg-green transition-all transition-color duration-200 delay-200"
               onClick={() => {
-                notifyToast();
-                add();
+                notifyToast()
+                add()
               }}
             >
               Buy now

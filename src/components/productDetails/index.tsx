@@ -18,14 +18,17 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const add = () => {addProduct(product)}
 
   return (
-    <>
-      <div className="flex flex-col md:flex-row max-w-screen items-center">
-        <Image
-          src={product.imageUrl}
-          alt={product.name}
-          height={200}
-          width={250}
-        />
+      <div className="flex flex-col md:flex-row max-w-screen items-center gap-4
+      ">
+        <div className="relative w-80 h-80">
+          <Image
+            className="object-contain"
+            src={product.imageUrl}
+            alt={product.name}
+            fill= {true}
+            priority
+            />
+        </div>
       <div className="flex flex-col items-start gap-4">
         <div className="flex flex-col gap-1">
           <h1>{product.name}</h1>
@@ -63,7 +66,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           setToastIsOpen={setToastIsOpen}
         />
       </div>
-    </>
   )
 }
 export default ProductDetails
