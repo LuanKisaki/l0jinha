@@ -24,7 +24,7 @@ const CartListRow = (props: { entry: CartEntry }) => {
               width={65}
               priority={true}
             />
-          <p className="truncate">
+          <p className="truncate select-none" >
               {props.entry.product.name}
           </p>
         </div>
@@ -32,7 +32,7 @@ const CartListRow = (props: { entry: CartEntry }) => {
       <td className="justify-self-end">
         <div className="flex gap-2 justify-end">
           <label
-            className="invisible md:visible"
+            className="invisible md:visible select-none"
             htmlFor={"id_" + props.entry.product.id}
           >
             R$
@@ -40,15 +40,15 @@ const CartListRow = (props: { entry: CartEntry }) => {
           &nbsp;
           <input
             type="text"
-            className="text-end w-16 px-2 py-1 rounded-md mb-1"
+            className="text-end w-16 px-2 py-1 border-solid border rounded-sm mb-1 select-none"
             id={"id_" + props.entry.product.id}
             value={props.entry.product.price.toFixed(2).replace('.', ',')}
             disabled
           />
         </div>
-        <div className="flex gap-2  justify-center">
+        <div className="flex gap-2 items-center">
           <label
-            className="invisible md:visible"
+            className="invisible md:visible select-none"
             htmlFor={"total_" + props.entry.product.id}
           >
             Total
@@ -56,7 +56,7 @@ const CartListRow = (props: { entry: CartEntry }) => {
           &nbsp;
           <input
             type="text"
-            className="text-end w-16 px-2 py-1 rounded-md"
+            className="text-end w-16 px-2 py-1 border-solid border rounded-sm select-none"
             id={"total_" + props.entry.product.id}
             disabled
             value={(props.entry.product.price * props.entry.quantity).toFixed(2).replace('.', ',')}
@@ -66,7 +66,7 @@ const CartListRow = (props: { entry: CartEntry }) => {
       <td className="text-right justify-self-end w-8">
         <input
           type="text"
-          className="text-end w-6 px-2 py-1 rounded-md"
+          className="text-end w-6 px-2 py-1 border-solid border rounded-sm"
           id={"quantity_" + props.entry.product.id}
           disabled
           value={props.entry.quantity}

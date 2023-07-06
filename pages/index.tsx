@@ -17,10 +17,10 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="flex flex-col items-center gap-4 pt-8 min-h-[58vh]">
-        <h1 className='text-4xl md:text-7xl bg-green p-6 select-none text-center'>
+        <h1 className='text-4xl md:text-7xl bg-green p-6 select-none text-center '>
           Seja bem vindo a <a className="text-white no-underline " href="https://nextjs.org">L0jinha</a>!
         </h1>
-        <h2>Compre fácil e em segurança</h2>
+        <h2 className="select-none">Compre fácil e em segurança</h2>
         <Link
           className="btn border-none bg-green text-white bold hover:bg-blue"
           href="/products"
@@ -28,7 +28,6 @@ const Home: NextPage = () => {
           Conheça nossos produtos!
         </Link>
       </main>
-
       <Footer />
     </>
   )

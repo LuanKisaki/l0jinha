@@ -38,23 +38,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               priority={true}
             />
           <p
-            className="car-title text-lg font-bold text-green pl-8"
+            className="car-title text-lg font-bold text-green pl-8 select-none"
             >{product.name}
           </p>
               </Link>
         <div className="card-body">
           <div
             className="flex mb-3 text-muted font-bold text-gray-dark justify-between">
-            <span>
+            <span className="select-none">
               R$ {price.toFixed(2).replace('.', ',')}
             </span>
-            <span>
+            <span className="select-none">
               Qtd: {inStock}
             </span>
           </div>
           <div className="card-actions justify-end ">
             <button
-              className="p-4 rounded-lg uppercase text-white font-bold border-none bg-gray-dark cursor-pointer
+              className="p-4 rounded-lg uppercase text-white font-bold border-none bg-gray-dark cursor-pointer select-none
               hover:bg-green transition-all transition-color duration-200 delay-200"
               onClick={() => {
                 notifyToast()

@@ -24,7 +24,7 @@ const Products: NextPage = (props: {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center md:items-start">
-          <h2 className="m-4">
+          <h2 className="m-4 select-none">
             Nossos Produtos
           </h2>
         <div className="flex flex-row flex-wrap mb-8 max-w-sm md:max-w-screen-xl">

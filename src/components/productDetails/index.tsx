@@ -32,10 +32,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         </div>
       <div className="flex flex-col items-start gap-8 w-4/5 lg:w-1/2 ">
         <div className="flex flex-col gap-3">
-          <h1>{product.name}</h1>
-          <h2 className="text-gray-dark">R$ {product.price.toFixed(2).replace('.',',')}</h2>
-          <p>
-            <span className="font-bold">
+          <h1 className="select-none">{product.name}</h1>
+          <h2 className="text-gray-dark select-none">R$ {product.price.toFixed(2).replace('.',',')}</h2>
+          <p className="select-none">
+            <span className="font-bold select-none">
               Em estoque:
             </span>
             &nbsp;
@@ -43,9 +43,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           </p>
         </div>
         <div className="flex flex-col gap-2 items-start">
-          <p className="font-bold">Descrição:
+          <p className="font-bold select-none">Descrição:
             &nbsp;
-            <span className="text-justify font-normal md:mx-12">
+            <span className="text-justify font-normal md:mx-12 select-none">
               {product.description}
             </span>
           </p>

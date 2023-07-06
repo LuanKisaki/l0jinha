@@ -33,23 +33,23 @@ const Static: NextPage = (props: {
 
   return (
     <div className="main">
-      <h1 className="my-5 text-center">
+      <h1 className="my-5 text-center select-none">
         renderização do Next.js (Static)
       </h1>
       <div className="flex justify-center gap-10">
         <div className="col-auto">
-          <h3>
+          <h3 className="select-none">
             Gerado estáticamente durante  o build:
           </h3>
-          <h2>
+          <h2 className="select-none">
             { props.staticData?.timestamp?.toString() }
           </h2>
         </div>
         <div className="col-auto">
-          <h3>
+          <h3 className="select-none">
             Gerado no cliente:
           </h3>
-          <h2>
+          <h2 className="select-none">
             { clientSideData?.timestamp?.toString() }
           </h2>
         </div>

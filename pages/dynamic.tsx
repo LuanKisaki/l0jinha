@@ -33,23 +33,23 @@ const Dynamic: NextPage = ( props: {
 
   return (
     <div className="main">
-      <h1 className="my-5 text-center">
+      <h1 className="my-5 text-center select-none">
         renderização do Next.js (Dynamic)
       </h1>
       <div className="flex justify-center gap-10">
         <div className="col-auto">
-          <h3>
+          <h3 className="select-none">
             Gerado no servidor:
           </h3>
-          <h2>
+          <h2 className="select-none">
             {props.serverSideData?.timestamp?.toString()}
           </h2>
         </div>
         <div className="col-auto">
-          <h3>
+          <h3 className="select-none">
             Gerado no cliente:
           </h3>
-          <h2>
+          <h2 className="select-none">
             {clientSideData?.timestamp?.toString()}
           </h2>
         </div>

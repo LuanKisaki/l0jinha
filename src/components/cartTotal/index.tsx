@@ -6,17 +6,17 @@ const CartTotal = () => {
   return (
     <tr>
         <td className="mt-8 font-bold rounded-md p-3 border border-solid border-gray-light bg-white">
-          <span className="flex justify-between">
+          <span className="flex justify-between select-none">
             <label htmlFor="totalCart">
               Total:
             </label>
-            <span className="flex gap-2 mr-4">
+            <span className="flex gap-2 mr-4 select-none">
               <label htmlFor="totalCart">
                 R$
               </label>
               &nbsp;
               <input
-                className="text-end p-2"
+                className="text-end p-2 select-none"
                 id="totalCart"
                 type="text"
                 disabled

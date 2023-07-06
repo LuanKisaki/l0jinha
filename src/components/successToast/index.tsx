@@ -15,6 +15,7 @@ const SuccessToast = (props: {
               color: 'rgb(19 206 102)',
               boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.01)',
               backgroundColor: '#fff',
+              userSelect: 'none'
             },
           }
         }

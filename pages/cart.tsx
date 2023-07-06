@@ -14,7 +14,7 @@ const Cart: NextPage = () => {
       <Header />
       <main className="min-h-[60vh]">
         <div>
-          <h2 className="m-4">
+          <h2 className="m-4 select-none">
             Meu Carrinho
           </h2>
           <CartList />
