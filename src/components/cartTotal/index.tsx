@@ -5,14 +5,19 @@ const CartTotal = () => {
 
   return (
     <tr>
-      <td>
-        <div className="my-8 font-bold rounded-md p-3 border-solid border-gray-light">
-          <div className="flex justify-between">
-            <label>Total: </label>
-            <div className="flex gap-2 mr-4">
-              <label>R$</label>
+        <td className="mt-8 font-bold rounded-md p-3 border border-solid border-gray-light bg-white">
+          <span className="flex justify-between">
+            <label htmlFor="totalCart">
+              Total:
+            </label>
+            <span className="flex gap-2 mr-4">
+              <label htmlFor="totalCart">
+                R$
+              </label>
+              &nbsp;
               <input
-                className="text-end"
+                className="text-end p-2"
+                id="totalCart"
                 type="text"
                 disabled
                 value={
@@ -21,10 +26,9 @@ const CartTotal = () => {
                   ).toFixed(2).replace('.', ',')
                 }
               />
-            </div>
-          </div>
-        </div>
-      </td>
+            </span>
+          </span>
+        </td>
     </tr>
   )
 }

@@ -1,17 +1,16 @@
 import Head from "next/head"
 import { ReactNode } from "react"
-import Footer from "../../components/footer"
-import Header from "../../components/header"
-import ProductDetails from "../../components/productDetails"
+import Footer from "../../src/components/footer"
+import Header from "../../src/components/header"
+import ProductDetails from "../../src/components/productDetails"
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
-import { ProductType, fetchProduct, fetchProducts } from "../../services/products"
+import { ProductType, fetchProduct, fetchProducts } from "../../src/services/products"
 
 export const getStaticProps: GetStaticProps = async context => {
   const id = context.params?.id
 
   if (typeof id === 'string') {
     const product = await fetchProduct(id)
-
     return {
       props: {
         product
@@ -51,7 +50,6 @@ const Product: NextPage = (props: {
       <Head>
         <title>{props.product!.name}</title>
         <meta name="description" content={props.product!.description}/>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <Header />
       <div className="flex m-4 items-center">

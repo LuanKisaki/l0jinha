@@ -20,16 +20,17 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   return (
       <div className="flex flex-col md:flex-row max-w-screen items-center gap-4
       ">
-        <div className="relative w-80 h-80">
+        <div className="relative md:w-1/3 w-screen h-96">
           <Image
             className="object-contain"
             src={product.imageUrl}
             alt={product.name}
             fill= {true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
             />
         </div>
-      <div className="flex flex-col items-start gap-4">
+      <div className="flex flex-col items-start gap-4 md:w-2/3 w-screen">
         <div className="flex flex-col gap-1">
           <h1>{product.name}</h1>
           <h2 className="text-gray-dark">R$ {product.price.toFixed(2).replace('.',',')}</h2>

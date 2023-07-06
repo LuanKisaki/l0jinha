@@ -9,70 +9,90 @@ type CartEntry = {
   quantity: number
 }
 
-const CartListRow = (props: {entry: CartEntry }) => {
+const CartListRow = (props: { entry: CartEntry }) => {
   const { addProduct, removeProduct } = useCart()
 
   return (
-    <>
-      <tr className="grid grid-cols-6 gap-4 font-bold items-center justify-between">
-        <td className="col-span-3">
-          <div className="flex flex-row items-center ">
+    <tr className="grid grid-cols-6 gap-4 font-bold items-center justify-between border-2 border-solid border-gray-light bg-white my-2 rounded-md">
+      <td className="col-span-3">
+        <div className="flex flex-row items-center ">
             <Image
               src={props.entry.product.imageUrl}
               alt={props.entry.product.name}
+              id={"image_"+props.entry.product.id}
               height={50}
               width={65}
             />
-            <label className="truncate">
+          <p className="truncate">
               {props.entry.product.name}
-            </label>
-          </div>
-        </td>
-        <td className="justify-self-end">
-          <div className="flex gap-2 justify-end">
-            <label className="invisible md:visible">R$ </label>
-            <input type="text" className="text-end w-16"
-              disabled
-              value={props.entry.product.price.toFixed(2).replace('.', ',')}
-            />
-          </div>
-          <div className="flex gap-2  justify-center">
-            <label className="invisible md:visible">Total </label>
-            <input type="text" className="text-end w-16"
-              disabled
-              value={(props.entry.product.price * props.entry.quantity).toFixed(2).replace('.', ',')}
-            />
-          </div>
-        </td>
-        <td className="text-right justify-self-end w-8">
-          <input type="text" className="text-end w-6"
+          </p>
+        </div>
+      </td>
+      <td className="justify-self-end">
+        <div className="flex gap-2 justify-end">
+          <label
+            className="invisible md:visible"
+            htmlFor={"id_" + props.entry.product.id}
+          >
+            R$
+          </label>
+          &nbsp;
+          <input
+            type="text"
+            className="text-end w-16 px-2 py-1 rounded-md mb-1"
+            id={"id_" + props.entry.product.id}
+            value={props.entry.product.price.toFixed(2).replace('.', ',')}
             disabled
-            value={props.entry.quantity}
           />
-        </td>
-        <td className="justify-self-center">
-          <div className="flex flex-col w-12 md:w-24 gap-1 px-2 py-1">
-            <button
-              className="bg-green border-none rounded-full hover:bg-[#0d6c2c]
+        </div>
+        <div className="flex gap-2  justify-center">
+          <label
+            className="invisible md:visible"
+            htmlFor={"total_" + props.entry.product.id}
+          >
+            Total
+          </label>
+          &nbsp;
+          <input
+            type="text"
+            className="text-end w-16 px-2 py-1 rounded-md"
+            id={"total_" + props.entry.product.id}
+            disabled
+            value={(props.entry.product.price * props.entry.quantity).toFixed(2).replace('.', ',')}
+          />
+        </div>
+      </td>
+      <td className="text-right justify-self-end w-8">
+        <input
+          type="text"
+          className="text-end w-6 px-2 py-1 rounded-md"
+          id={"quantity_" + props.entry.product.id}
+          disabled
+          value={props.entry.quantity}
+        />
+      </td>
+      <td className="justify-self-center">
+        <div className="flex flex-col w-12 md:w-16 gap-1 px-2 py-1">
+          <button
+            className="bg-green border-none rounded-full hover:bg-[#0d6c2c]
               active:bg-green transition-color duration-200 text-white font-extrabold text-lg"
-              onClick={
-                () => addProduct(props.entry.product)
-              }
-            >
-              +
-            </button>
-            <button
-              className="bg-orange border-none rounded-full hover:bg-[#75310c] active:bg-orange transition-color duration-200 text-white font-extrabold text-lg"
-              onClick={
-                () => removeProduct(props.entry.product.id)
-              }
-            >
-              -
-            </button>
-          </div>
-        </td>
-      </tr>
-    </>
+            onClick={
+              () => addProduct(props.entry.product)
+            }
+          >
+            +
+          </button>
+          <button
+            className="bg-orange border-none rounded-full hover:bg-[#75310c] active:bg-orange transition-color duration-200 text-white font-extrabold text-lg"
+            onClick={
+              () => removeProduct(props.entry.product.id)
+            }
+          >
+            -
+          </button>
+        </div>
+      </td>
+    </tr>
   )
 }
 
@@ -103,10 +123,10 @@ export default function CartList() {
   }, [cart])
   return (
     <div className="flex flex-col items-start mx-4 justify-between ">
-      <div className="md:w-2/3 w-full">
-        <table className="text-gray-dark">
-          <thead className="bg-gray-light content-center px-2 py-1 rounded-md table-cell">
-            <tr className="grid grid-cols-6 gap-1 text-right font-bold">
+      <div className="md:w-4/5 lg:w-full w-full overflow-hidden overflow-x-auto">
+        <table className="text-gray-dark bg-neutral-200 rounded-md mb-4 p-2 min-w-[480px]">
+          <thead className="bg-gray-light content-center px-2 py-2 rounded-md table-cell">
+            <tr className="grid grid-cols-6 gap-1 text-right font-bold ">
               <td className="text-center col-span-3">Produto</td>
               <td>Preço</td>
               <td>Qtd.</td>

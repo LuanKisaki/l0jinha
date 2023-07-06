@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Header from "../components/header";
-import Footer from "../components/footer";
 import Link from "next/link";
+import Header from "../src/components/header";
+import Footer from "../src/components/footer";
 
 
 
@@ -12,6 +12,7 @@ const Home: NextPage = () => {
       <Head>
         <title>L0jinha</title>
         <meta name="description" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
 
       <Header />
