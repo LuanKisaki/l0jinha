@@ -8,7 +8,7 @@ interface ApiResponse {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const serverSideData: ApiResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/hello`).then(res => res.json())
+  const serverSideData: ApiResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages/api/hello`).then(res => res.json())
   return {
     props: {
       serverSideData

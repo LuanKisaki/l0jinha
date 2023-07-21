@@ -8,12 +8,12 @@ export type ProductType = {
 }
 
 export const fetchProducts = async () => {
-  const products: ProductType[] = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`).then(res => res.json())
+  const products: ProductType[] = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/page/api/products`).then(res => res.json())
   return products
 }
 
 export const fetchProduct = async (id: string | number) => {
-  const product: ProductType = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/${id}`).then(res => res.json())
+  const product: ProductType = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/page/api/products/${id}`).then(res => res.json())
   return product
 
 }
